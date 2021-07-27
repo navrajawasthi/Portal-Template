@@ -1,0 +1,130 @@
+//header icon wrapper
+.header-icon-wrapper {
+    background-color: $color-light-gray;
+    .header-icon-image {
+        display: flex;
+        align-items: center;
+        li {
+            padding: 16px 0 15px 0;
+            a {
+                padding: 8px 25px 8px 8px;
+                background: white;
+                text-transform: capitalize;
+                font-size: bold;
+                margin-right: 4px;
+                font-size: 12px;
+                @include breakpoint(medium) {
+                    padding: 8px 8px 8px 8px;
+                }
+            }
+            img {
+                padding-right: 22px;
+                @include breakpoint(medium) {
+                    padding-right: 10px;
+                }
+            }
+        }
+    }
+    .header-icon-social-link {
+        .header-icon-social-section {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            @include breakpoint(smaller) {
+                display: none;
+            }
+            li {
+                padding: 16px 21px;
+                border-left: 1px solid #dee0e6;
+                &:last-child {
+                    border-right: 1px solid #dee0e6;
+                }
+                a {
+                    font-size: 21px;
+                }
+            }
+        }
+    }
+}
+
+//header logo wrapper
+.header-logo-wrapper {
+    padding: 61px 0 63px 0;
+    @include breakpoint(medium) {
+        padding: 30px 0;
+    }
+    .logo {
+        img {
+            height: 100px;
+            width: 403px;
+            object-fit: cover;
+            @include breakpoint(smaller) {
+                width: 200px;
+            }
+        }
+    }
+    .header-address {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 69px;
+        @include breakpoint(medium) {
+            display: none;
+        }
+        li {
+            padding: 0 27px;
+            &:nth-child(2) {
+                border-left: 1px solid #bcbec3;
+                border-right: 1px solid #bcbec3;
+            }
+            a {
+                color: #6d6e71;
+                visibility: visible;
+                opacity: 1;
+            }
+            i {
+                font-size: 29px;
+                transition: 0.5s ease;
+                position: relative;
+                &:hover {
+                    color: $color-blue;
+                }
+            }
+            .tooltip {
+                position: relative;
+                display: inline-block;
+            }
+
+            .tooltip .tooltiptext {
+                visibility: hidden;
+                opacity: 0;
+                width: 227px;
+                border-radius: 6px;
+                top: -42px;
+                background: $color-accent-white;
+                color: $color-gray;
+                padding: 10px 0;
+                border-radius: 5px;
+                border: solid 2px #d4d4d5;
+                /* Position the tooltip */
+                position: absolute;
+                z-index: 1;
+                text-align: center;
+                margin-left: -130px;
+                @include breakpoint(wide) {
+                    margin-left: -200px;
+                }
+            }
+
+            .tooltip:hover .tooltiptext {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}
+@include breakpoint(medium) {
+    .active-responsive-menu .header-logo-wrapper {
+        z-index: 99;
+        position: relative;
+    }
+}

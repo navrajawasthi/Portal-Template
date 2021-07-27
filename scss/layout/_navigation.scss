@@ -1,0 +1,198 @@
+// navigation header wrapper
+.header-wrapper {
+  border-top: 1px solid $color-light-gray;
+  ul {
+    display: flex;
+    align-items: center;
+    li {
+      padding: 24px 17px 28px;
+      border-left: 1px solid $color-light-gray;
+      position: relative;
+      transition: 0.5s ease;
+      cursor: pointer;
+      &:before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 10px solid #1faae2;
+        position: absolute;
+        bottom: -1px;
+        text-align: center;
+        font-size: 35px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        transition: 0.5s ease;
+        color: #1faae2;
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      &:hover::before {
+        opacity: 1;
+        visibility: visible;
+        @include breakpoint(medium) {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+      &:hover a {
+        color: $color-blue;
+      }
+      &:first-child {
+        border-left: none;
+      }
+      a {
+        font-family: bold;
+        transition: 0.5s ease-in-out;
+        text-transform: capitalize;
+        position: relative;
+        @include breakpoint(medium) {
+          font-size: 18px;
+        }
+      }
+      @include breakpoint(medium) {
+        border-left: none;
+      }
+    }
+  }
+  .search-nav {
+    padding: 24px 17px 28px;
+    float: right;
+    i {
+      padding-right: 13px;
+      font-size: 25px;
+    }
+    form {
+      display: flex;
+      align-items: center;
+      input[type="text"] {
+        border: none;
+        box-sizing: border-box;
+        resize: vertical;
+        outline: none;
+        font-size: 15px;
+        z-index: 99999;
+        position: relative;
+      }
+    }
+  }
+  &.active_sticky {
+    position: fixed;
+    top: 0;
+    transition: 0.5s ease;
+    width: 100%;
+    z-index: 9999;
+    background: $color-accent-white;
+  }
+  &.nav-up {
+    top: -100px;
+  }
+}
+
+// Media Query
+@include breakpoint(medium) {
+  .menu-toggle {
+    position: absolute;
+    cursor: pointer;
+    z-index: 99;
+    right: 15px;
+    top: -100px;
+  }
+  .menu-toggle span {
+    width: 40px;
+    height: 3px;
+    display: block;
+    background-color: $color-blue;
+    margin: 8px 0;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+  .active-responsive-menu span:nth-child(1) {
+    transform: rotate(135deg);
+    position: absolute;
+    top: 0;
+  }
+  .active-responsive-menu span:nth-child(2) {
+    display: none;
+  }
+  .active-responsive-menu span:nth-child(3) {
+    transform: rotate(-135deg);
+  }
+  .active-responsive-menu {
+    overflow: hidden;
+  }
+  nav {
+    background-color: $color-accent-white;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .header-wrapper {
+    ul {
+      li {
+        margin-left: 0;
+        a {
+          padding: 0;
+        }
+        a:after {
+          margin-left: 0;
+        }
+      }
+      li:last-child {
+        margin-left: 0;
+        display: none;
+      }
+    }
+  }
+  .active-responsive-menu nav {
+    position: fixed;
+    right: 0%;
+    opacity: 1;
+    width: 100%;
+    visibility: visible;
+    z-index: 9;
+    transition: 0.5s ease-in-out;
+  }
+  .active-responsive-menu nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0 15px;
+  }
+  .active-responsive-menu nav ul li {
+    display: block;
+    padding: 50px 0 0 0;
+    transition: 1s ease;
+    margin-right: 0;
+    @include breakpoint(extrasmall) {
+      padding: 20px 0 0 0;
+    }
+  }
+
+  .search-nav {
+    display: none;
+  }
+
+  .active-responsive-menu nav ul :nth-child(1) {
+    transition-delay: 0.2s;
+  }
+  .active-responsive-menu nav ul :nth-child(2) {
+    transition-delay: 0.3s;
+  }
+  .active-responsive-menu nav ul :nth-child(3) {
+    transition-delay: 0.4s;
+  }
+  .active-responsive-menu nav ul :nth-child(4) {
+    transition-delay: 0.5s;
+  }
+  .active-responsive-menu nav ul :nth-child(5) {
+    transition-delay: 0.6s;
+  }
+}

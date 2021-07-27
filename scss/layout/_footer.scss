@@ -1,0 +1,152 @@
+#footer-wrapper {
+    background: #2b2c2d;
+    padding: 77px 0 33px 0;
+    @include breakpoint(medium) {
+        padding: 40px 0;
+    }
+
+    .footer-social-link {
+        display: flex;
+        align-items: center;
+        margin-bottom: 55px;
+        @include breakpoint(medium) {
+            margin-bottom: 20px;
+        }
+        li {
+            padding: 22px 21px;
+            border-left: 1px solid #3c3e3f;
+            &:last-child {
+                border-right: 1px solid #3c3e3f;
+            }
+            a {
+                font-size: 21px;
+                transition: 0.5s ease;
+                &:hover {
+                    color: $color-blue;
+                }
+            }
+        }
+    }
+    span {
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 2.08;
+    }
+
+    //form
+    form {
+        position: relative;
+        margin-top: 4px;
+        margin-bottom: 50px;
+        margin-left: -30px;
+        @include breakpoint(medium) {
+            margin: 40px 0;
+        }
+        img {
+            position: absolute;
+            top: 30%;
+            z-index: 99;
+            padding-left: 21px;
+            object-fit: cover;
+            @include breakpoint(iPhone5) {
+                padding-left: 5px;
+                top: 22%;
+            }
+        }
+        input[type="text"] {
+            width: 762px;
+            max-width: 100%;
+            height: 66px;
+            padding: 16px 0 15px 85px;
+            border-radius: 10px;
+            background-color: #393b3c;
+            color: #6d6e71;
+            border: none;
+            box-sizing: border-box;
+            resize: vertical;
+            outline: none;
+            font-size: 14px;
+            position: relative;
+            @include breakpoint(medium) {
+                width: 100%;
+            }
+            @include breakpoint(iPhone5) {
+                padding: 10px 0 10px 55px;
+            }
+        }
+        input[type="submit"] {
+            padding: 9px 25px 9px 24px;
+            border-radius: 10px;
+            background-color: #494c4d;
+            color: #6d6e71;
+            border: none;
+            cursor: pointer;
+            text-transform: capitalize;
+            font-size: 14px;
+            font-weight: bold;
+            width: 77px;
+            position: absolute;
+            right: 9px;
+            top: 13px;
+            box-shadow: inset 0 0 0 0 $color-primary-black;
+            transition: 0.5s ease-in-out;
+            &:hover {
+                @include button-animation-hover();
+                color: $color-accent-white;
+            }
+            @include breakpoint(iPhone5) {
+                right: 0;
+                width: 100%;
+                position: relative;
+            }
+        }
+    }
+    .footer-nav {
+        display: flex;
+        justify-content: flex-end;
+        @include breakpoint(medium) {
+            justify-content: flex-start;
+        }
+        li {
+            padding: 8px;
+            &:last-child {
+                padding-right: 0;
+            }
+            a {
+                transition: 0.5s ease;
+                &:hover {
+                    color: $color-blue;
+                }
+            }
+        }
+    }
+    .back-top-arrow {
+        position: relative;
+        opacity: 0;
+        visibility: hidden;
+        background-color: $color-accent-white;
+        position: fixed;
+        border-radius: 50%;
+        bottom: 2%;
+        right: 2%;
+        width: 98px;
+        height: 98px;
+        z-index: 99999;
+        border: 2px solid $color-blue;
+        @include breakpoint(wider) {
+            width: 50px;
+            height: 50px;
+        }
+        a {
+            font-size: 42px;
+            color: #e4e4e4;
+
+            i {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+        }
+    }
+}
